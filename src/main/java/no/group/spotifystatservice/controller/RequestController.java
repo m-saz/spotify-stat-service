@@ -23,8 +23,8 @@ public class RequestController {
 		if (year == null) year = 1;
 		
 		LOG.info("colname = {}, year = {}", colname, year);
-		LOG.info("{}", Arrays.toString(datasetService.getDataset(colname)));
-		LOG.info("length = {}", datasetService.getDataset(colname).length);
+		LOG.info("{}", datasetService.getDataset(colname));
+		LOG.info("length = {}", datasetService.getDataset(colname).size());
 
 		return "[\n"
 				+ "    {\"min\" : 0, \"max\" : 100, \"count\" : 10},\n"
