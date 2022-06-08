@@ -18,5 +18,7 @@ public class Song {
     @CsvBindByName
     private double danceability;
     @CsvBindByName
+    private double energy;
+    @CsvBindByName
     private int key;
 }
