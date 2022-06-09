@@ -1,24 +1,25 @@
 package no.group.spotifystatservice.domain;
 
 import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
 public class Song {
-    @CsvBindByName
+    @CsvBindByPosition(position = 1)
     private String song;
-    @CsvBindByName
-    private int duration_ms;
-    @CsvBindByName
+    @CsvBindByPosition(position = 2)
+    private int durationMs;
+    @CsvBindByPosition(position = 4)
     private int year;
-    @CsvBindByName
+    @CsvBindByPosition(position = 5)
     private int popularity;
-    @CsvBindByName
+    @CsvBindByPosition(position = 6)
     private double danceability;
-    @CsvBindByName
+    @CsvBindByPosition(position = 7)
     private double energy;
-    @CsvBindByName
+    @CsvBindByPosition(position = 8)
     private int key;
 }

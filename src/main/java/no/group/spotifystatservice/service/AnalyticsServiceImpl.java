@@ -49,7 +49,7 @@ public class AnalyticsServiceImpl implements AnalyticsService{
                 Decile target = targetOptional.get();
                 target.setCount(target.getCount()+1);
             } else {
-                //Uppermost border of data range has to be processed separately
+                //Uppermost boundary of data range has to be processed separately
                 deciles[9].setCount(deciles[9].getCount()+1);
             }
         });
@@ -57,18 +57,18 @@ public class AnalyticsServiceImpl implements AnalyticsService{
 
     private void generateRanges(Decile[] deciles, double min, double max) {
         BigDecimal increment = BigDecimal.valueOf(max).subtract(BigDecimal.valueOf(min)).divide(BigDecimal.TEN);
-        BigDecimal border = BigDecimal.valueOf(min);
+        BigDecimal boundary = BigDecimal.valueOf(min);
         for(Decile decile : deciles){
-            decile.setMin(border);
-            border = border.add(increment);
-            decile.setMax(border);
+            decile.setMin(boundary);
+            boundary = boundary.add(increment);
+            decile.setMax(boundary);
         }
     }
 
     private double[] getNumericDataset(List<Song> dataset, String colname) {
         double[] numericDataset = dataset.stream().mapToDouble(song -> {
             switch (colname){
-                case "duration_ms": return song.getDuration_ms();
+                case "duration_ms": return song.getDurationMs();
                 case "year": return song.getYear();
                 case "popularity": return song.getPopularity();
                 case "danceability": return song.getDanceability();
