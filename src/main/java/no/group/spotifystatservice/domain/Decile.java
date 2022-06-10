@@ -5,10 +5,13 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@Component
 @Data
 public class Decile {
     private BigDecimal min;
     private BigDecimal max;
     private int count;
+
+    public void incrementCount(){
+        count++;
+    }
 }

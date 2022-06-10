@@ -47,10 +47,10 @@ public class AnalyticsServiceImpl implements AnalyticsService{
             }).findFirst();
             if(targetOptional.isPresent()){
                 Decile target = targetOptional.get();
-                target.setCount(target.getCount()+1);
+                target.incrementCount();
             } else {
                 //Uppermost boundary of data range has to be processed separately
-                deciles[9].setCount(deciles[9].getCount()+1);
+                deciles[9].incrementCount();
             }
         });
     }

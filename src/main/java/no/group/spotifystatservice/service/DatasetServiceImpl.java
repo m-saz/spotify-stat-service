@@ -44,9 +44,6 @@ public class DatasetServiceImpl implements DatasetService {
 	private static ColumnPositionMappingStrategy<Song> getMappingStrategy() {
 		ColumnPositionMappingStrategy<Song> strategy = new ColumnPositionMappingStrategy<>();
 		strategy.setType(Song.class);
-		strategy.setColumnMapping("artist","song","duration_ms","explicit","year","popularity","danceability",
-				"energy","key","loudness","mode","speechiness","acousticness","instrumentalness","liveness",
-				"valence","tempo","genre");
 		return strategy;
 	}
 
